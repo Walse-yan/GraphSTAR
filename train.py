@@ -158,6 +158,7 @@ def train(adata,                    # 要求有adata.X，标签放在label中，
     ARI = adjusted_rand_score(adata.obs['predict'], adata.obs['Ground Truth'])
     NMI = normalized_mutual_info_score(adata.obs['predict'], adata.obs['Ground Truth'])
     AMI = adjusted_mutual_info_score(adata.obs['predict'], adata.obs['Ground Truth'])
+    metric = {"ARI": ARI, "NMI": NMI, "AMI": AMI}
     adata.uns['metric'] = metric
 
     if is_record:
